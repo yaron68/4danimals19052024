@@ -6,6 +6,7 @@ from datetime import datetime
 import sqlite3, hashlib
 from validate_fileds import validate_form
 import os
+import time
 
 app = Flask(__name__)
 # Get the base directory of the application
@@ -28,7 +29,7 @@ def before_request_func():
     """
     This function runs before each request and records the start time.
     """
-    request._prometheus_metrics_request_start_time = time()
+    request._prometheus_metrics_request_start_time = time.time()
 
 #runs after any REST API request is handled, calculates latency and counts relevant stats
 @app.after_request
@@ -39,7 +40,7 @@ def after_request(response):
     details: HTTP method, the endpoint accessed, and the HTTP status code of the response.
     The response object is then returned, unchanged.
     """
-    request_latency = time() - request._prometheus_metrics_request_start_time
+    request_latency = time.time() - request._prometheus_metrics_request_start_time
     REQUEST_COUNTER.labels(
         method=request.method,
         endpoint=request.endpoint,

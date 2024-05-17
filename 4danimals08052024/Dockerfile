@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install Flask Flask_SQLAlchemy
+RUN pip install Flask Flask_SQLAlchemy prometheus_client prometheus_client datetime
 
 # Set environment variable in Dockerfile
 ENV USER_HASH "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
