@@ -1,2 +1,0 @@
-apturl
-Flask==2.1.2
