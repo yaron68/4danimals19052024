@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/devsecops14/4danimal18052024'
+                git 'https://github.com/devsecops14/4danimals18052024'
                 
                 
             }
