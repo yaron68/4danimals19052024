@@ -31,7 +31,7 @@ jobs:
             scm {
               git {
                 remote {
-                  url 'https://github.com/devsecops14/4danimals018052024'
+                  url 'https://github.com/devsecops14/4danimals019052024'
                   credentialsId 'github'
                 }
                 branches {
