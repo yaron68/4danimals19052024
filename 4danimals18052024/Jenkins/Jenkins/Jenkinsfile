@@ -12,6 +12,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
+                    sh 'dir 4danimals18052024/Jenkins/Jenkins/'
                     docker.build('fourdanimals')
                 }
             }
