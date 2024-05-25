@@ -5,7 +5,7 @@ FROM jenkins/jenkins:lts
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 # Install plugins: Configuration as Code and any others you might need
-RUN /usr/local/bin/install-plugins.sh configuration-as-code
+# RUN /usr/local/bin/install-plugins.sh configuration-as-code
 
 # Copy your Configuration as Code YAML file into the container
 COPY jenkins.yaml /var/jenkins_home/jenkins.yaml
